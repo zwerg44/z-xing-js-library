@@ -624,7 +624,7 @@ export default class RSSExpandedReader extends AbstractRSSReader {
 
     for (let i = 0; i < counters.length; i++) {
       let value = 1.0 * counters[i] / elementWidth;
-      let count = value + 0.5; // Round
+      let count = Math.round(value); // Round
       if (count < 1) {
         if (value < 0.3) {
           throw new NotFoundException();
